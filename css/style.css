@@ -31,6 +31,71 @@ header {
          url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
+    position: relative;
+
     /* Starts at top left corner, top right corner, bottom right corner, bottom left corner. */
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100% );
+}
+
+/*  */
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.header-text-box {
+    position: absolute;
+    top: 40%;
+    left: 52%;
+    /* 50% is no longer in relation to the parent element, but of the element itself. */
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 15px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .header-text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /* 50% is no longer in relation to the parent element, but of the element itself. */
+        transform: translate(-50%, -50%);
+    }
+
+    .heading-primary-main {
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 17.3px;
+    }
 }
