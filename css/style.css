@@ -7,10 +7,12 @@ Dark green: #28b485
 
 */
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 html {
@@ -25,6 +27,7 @@ body {
     line-height: 1.7;
     color: #777777;
     padding: 3rem;
+    box-sizing: border-box;
 }
 
 header {
@@ -42,18 +45,18 @@ header {
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100% );
 }
 
-/*  */
-.logo-box {
+/* Header */
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
-    height: 3.5px;
+.header__logo {
+    height: 4rem;
 }
 
-.header-text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 52%;
@@ -70,7 +73,7 @@ header {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -89,7 +92,7 @@ header {
      */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -163,7 +166,7 @@ header {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777777;
 }
@@ -182,7 +185,7 @@ header {
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -192,7 +195,7 @@ header {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     /* animation */
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
