@@ -1,0 +1,52 @@
+@keyframes moveInLeft {
+    /* When animation starts */
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    /* When the animation ends */
+    100% {
+        opacity: 1;
+        /* It'll look exactly the same as it was before the animation state. */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    /* When animation starts */
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    /* When the animation ends */
+    100% {
+        opacity: 1;
+        /* It'll look exactly the same as it was before the animation state. */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    /* When animation starts */
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    /* When the animation ends */
+    100% {
+        opacity: 1;
+        /* It'll look exactly the same as it was before the animation state. */
+        transform: translate(0);
+    }
+}

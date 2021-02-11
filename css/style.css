@@ -1,3 +1,40 @@
+@keyframes moveInLeft {
+  /* When animation starts */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  /* When the animation ends */
+  100% {
+    opacity: 1;
+    /* It'll look exactly the same as it was before the animation state. */
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  /* When animation starts */
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  /* When the animation ends */
+  100% {
+    opacity: 1;
+    /* It'll look exactly the same as it was before the animation state. */
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  /* When animation starts */
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  /* When the animation ends */
+  100% {
+    opacity: 1;
+    /* It'll look exactly the same as it was before the animation state. */
+    transform: translate(0); } }
+
 *,
 *::after,
 *::before {
@@ -17,6 +54,53 @@ body {
   color: #777;
   padding: 3rem;
   box-sizing: border-box; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
+  /* The box model will now treat this element like a block element, instead of just an inline element. Always do this if you want to give some padding or height to an element. */
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    /* This increases the element */
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  /* Puts the psuedo element behind the original button */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn--animated {
+  /* animation */
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards; }
 
 .header {
   height: 95vh;
@@ -70,87 +154,3 @@ body {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
-
-@keyframes moveInLeft {
-  /* When animation starts */
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  /* When the animation ends */
-  100% {
-    opacity: 1;
-    /* It'll look exactly the same as it was before the animation state. */
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  /* When animation starts */
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  /* When the animation ends */
-  100% {
-    opacity: 1;
-    /* It'll look exactly the same as it was before the animation state. */
-    transform: translate(0); } }
-
-.btn:link, .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.6rem;
-  padding: 1.5rem 4rem;
-  /* The box model will now treat this element like a block element, instead of just an inline element. Always do this if you want to give some padding or height to an element. */
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s;
-  position: relative; }
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
-    /* This increases the element */
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0; }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-  .btn--white::after {
-    background-color: #fff; }
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  /* Puts the psuedo element behind the original button */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--animated {
-  /* animation */
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
-
-@keyframes moveInBottom {
-  /* When animation starts */
-  0% {
-    opacity: 0;
-    transform: translateY(30px); }
-  /* When the animation ends */
-  100% {
-    opacity: 1;
-    /* It'll look exactly the same as it was before the animation state. */
-    transform: translate(0); } }
